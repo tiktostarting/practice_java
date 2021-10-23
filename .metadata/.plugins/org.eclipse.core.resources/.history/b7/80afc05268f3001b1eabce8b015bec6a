@@ -1,0 +1,43 @@
+package com.lawencon.spring.model;
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity(name = "tb_m_kategori")
+public class Kategori {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(name = "nama_ktgr", length = 30)
+	private String namaKategori;
+	
+	@Column(name = "kd_ktgr", unique = true,length = 10)
+	private String kodeKategori;
+	
+	@Column(name = "version")
+	private Integer version;
+	
+	@Column(name = "isactive")
+	private Boolean isActive;
+	
+	@Column(name = "created_by")
+	private Integer createdBy;
+	
+	@Column(name = "created_at")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createdAt;
+	
+	@Column(name = "updated_by")
+	private Integer updatedBy;
+	
+	@Column(name = "updated_at")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date updatedAt;
+}

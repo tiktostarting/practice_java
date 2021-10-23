@@ -1,0 +1,9 @@
+package com.lawencon.spring.dao;
+
+import com.lawencon.spring.model.Role;
+
+public interface RoleDao {
+	void insert(Role data);
+	Role getById(Long id);
+	Role getByName(String name);
+}

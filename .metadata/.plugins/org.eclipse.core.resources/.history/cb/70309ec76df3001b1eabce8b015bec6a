@@ -1,0 +1,19 @@
+package com.lawencon.spring.model;
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+
+public class BaseModel {
+	@Column(name = "version")
+	private Integer version;
+	@Column(name = "isactive")
+	private Boolean isActive;
+	@Column(name = "created_by")
+	private Integer createdBy;
+	@Column(name = "created_at")
+	private LocalDateTime createdAt;
+	@Column(name = "updated_by")
+	private Integer updatedBy;
+	@Column(name = "updated_at")
+	private LocalDateTime updatedAt;
+}

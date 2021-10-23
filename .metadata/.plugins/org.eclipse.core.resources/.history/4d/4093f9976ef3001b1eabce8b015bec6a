@@ -1,0 +1,18 @@
+package com.lawencon.spring.model;
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name = "tb_m_status")
+public class Status {
+
+	@Column(name = "nama_status", length = 20)
+	private String namaStatus;
+	
+	@Column(name = "kd_status", unique = true, length = 10)
+	private String kodeStatus;
+}

@@ -1,0 +1,8 @@
+package com.lawencon.spring.dto.karyawan;
+
+public class KaryawanFindByIdPathResData {
+	
+	private String msg;
+	private Data data;
+	
+}

@@ -1,0 +1,28 @@
+package quiz2;
+
+public class matrix {
+	public static void main(String[] args) {
+		
+		int a = 100;
+		Integer b = 1000;
+		
+		
+		matrix akses = new matrix();
+		akses.target();
+		akses.target(1000);
+		akses.target(100);
+		
+	}
+	
+	public void target() {
+		System.out.print("ini kosong");
+	}
+	
+	public void target(int a) {
+		System.out.print("int primitif"+ a);
+	}
+	
+	public void target(Integer a) {
+		System.out.print("Integer referens"+ a);
+	}
+}

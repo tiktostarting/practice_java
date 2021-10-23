@@ -1,0 +1,73 @@
+package com.lawencon.spring.dao;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
+import javax.transaction.Transactional;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.lawencon.spring.model.Karyawan;
+
+@SpringBootTest
+
+public class KaryawanDaoTest {
+	
+	@Autowired
+	private KaryawanDao karyawanDao;
+	
+	private Karyawan pekerja = new Karyawan();
+	
+	@BeforeEach
+	public void start() {
+		pekerja.setUsername("Maintainer");
+		karyawanDao.insert(pekerja);
+	}
+	
+	@Test
+	@Transactional
+	public void insertKaryawan() {
+		assertEquals("Maintainer", pekerja.getUsername(), "Benar");
+	}
+	
+	@Test
+	@Transactional
+	public void updateKaryawan() {
+		pekerja.setUsername("Admin");
+		pekerja.setPass("1234abc");
+		pekerja.setId(1L);
+		pekerja.setVersion(0);
+		
+		karyawanDao.update(pekerja);
+		
+		assertEquals("Admin", pekerja.getUsername(), "harusnya username = Admin");
+		assertEquals("1234abc", pekerja.getPass(), "harusnya pass = 1234abc");
+		
+//		Karyawan cekNama = karyawanDao.getByName("Admin");
+//		assertNotNull(cekNama);
+		
+		Long id = 1L;
+		Karyawan updateLihat = karyawanDao.getById(id);
+		assertNotNull(updateLihat);
+	}
+	
+	@Test
+	@Transactional
+	public void cariKaryawan() {
+		Karyawan check = karyawanDao.getByName("Maintainer");
+		assertNotNull(check);
+	}
+	
+	@Test
+	@Transactional
+	public void hapusKaryawan() {
+		karyawanDao.delete(1L);
+		
+		Karyawan check = karyawanDao.getByName("Maintainer");
+		assertNull(check);
+	}
+}

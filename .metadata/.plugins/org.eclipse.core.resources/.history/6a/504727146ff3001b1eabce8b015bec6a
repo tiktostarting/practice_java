@@ -1,0 +1,129 @@
+package com.lawencon.spring.model;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity(name = "tb_m_layanan")
+public class Layanan {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNamaLayanan() {
+		return namaLayanan;
+	}
+
+	public void setNamaLayanan(String namaLayanan) {
+		this.namaLayanan = namaLayanan;
+	}
+
+	public String getKodeLayanan() {
+		return KodeLayanan;
+	}
+
+	public void setKodeLayanan(String kodeLayanan) {
+		KodeLayanan = kodeLayanan;
+	}
+
+	public BigDecimal getHarga() {
+		return harga;
+	}
+
+	public void setHarga(BigDecimal harga) {
+		this.harga = harga;
+	}
+
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+
+	public Boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public Integer getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(Integer createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Integer getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(Integer updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public LocalDateTime getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(LocalDateTime updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	@Column(name = "nama_layanan", unique = true, length = 30)
+	private String namaLayanan;
+	
+	@Column(name = "kd_layanan", unique = true, length = 10)
+	private String KodeLayanan;
+	
+	@Column(name = "harga")
+	private BigDecimal harga;
+	
+	@Column(name = "version")
+	private Integer version;
+	
+	@Column(name = "isActive")
+	private Boolean isActive;
+	
+	@Column(name = "created_by")
+	private Integer createdBy;
+	
+	@Column(name = "created_at")
+	@Temporal(TemporalType.TIMESTAMP)
+	private LocalDateTime createdAt;
+	
+	@Column(name = "updated_by")
+	private Integer updatedBy;
+	
+	@Column(name = "updated_at")
+	@Temporal(TemporalType.TIMESTAMP)
+	private LocalDateTime updatedAt;
+}

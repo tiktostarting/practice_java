@@ -1,0 +1,32 @@
+package com.lawencon.spring.service;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.lawencon.spring.dao.KaryawanDao;
+import com.lawencon.spring.model.Karyawan;
+
+@SpringBootTest
+public class KaryawanServiceTest {
+	
+	@Mock
+	private KaryawanDao karyawanDao;
+	
+	@InjectMocks
+	private KaryawanService karyawanService = new KaryawanServiceImpl();
+	
+	@Test
+	public void insert() {
+		Karyawan karyawan = new Karyawan();
+		karyawan.setUsername("Abce");
+		karyawanService.insert(karyawan);
+		
+		assertNotNull(karyawan.getId());
+	}
+	
+	
+}

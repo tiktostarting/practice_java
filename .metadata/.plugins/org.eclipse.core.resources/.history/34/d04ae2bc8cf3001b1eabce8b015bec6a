@@ -1,0 +1,70 @@
+package com.lawencon.spring;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.lawencon.spring.service.RoleService;
+import com.lawencon.spring.service.UniversitasService;
+import com.lawencon.spring.model.Role;
+import com.lawencon.spring.model.Universitas;
+
+@SpringBootApplication
+public class Application {
+	
+	private RoleService roleService;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+	
+	public void insert(RoleService roleService) {
+		Role role = new Role();
+		role.setVersion(1);			
+		role.setNamaRole("Kasir");
+		role.setKodeRole("CSR");
+		roleService.insert(role);
+	}
+	
+	public void update(RoleService roleService) {
+		Role newRole = new Role();
+		newRole.setId(10L);
+		newRole.setVersion(1);
+		newRole.setNamaRole("Persona");
+		newRole.setKodeRole("PCR");
+		roleService.update(newRole);
+	}
+	
+	public void delete() {
+		roleService.delete(1L);
+	}
+	
+	@Bean
+	public CommandLineRunner commandLineRunner(RoleService roleService) {
+		return args -> {
+			
+//			insert(roleService);
+			update(roleService);
+//			delete();
+			
+//			Role role = new Role();
+//			role.setVersion(1);			
+//			role.setNamaRole("Admin");
+//			role.setKodeRole("ADM");
+//			roleService.insert(role);
+//			
+//			roleService.getById(1L);
+//			roleService.getByName("Admin");
+//
+//			Role newRole = new Role();
+//			newRole.setVersion();
+//			newRole.setNamaRole("Administrator");
+//			newRole.setKodeRole("ADMNS");
+//			roleService.update(newRole);
+//
+//			roleService.delete(1L);
+		};
+	}
+
+}

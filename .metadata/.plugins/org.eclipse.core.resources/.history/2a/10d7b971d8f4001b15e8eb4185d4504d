@@ -1,0 +1,6 @@
+package com.lawencon.spring.dto.karyawan;
+
+public class InsertDataReq {
+	private String username;
+	private String pass;
+}

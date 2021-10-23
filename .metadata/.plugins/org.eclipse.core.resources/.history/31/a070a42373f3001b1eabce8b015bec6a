@@ -1,0 +1,19 @@
+package com.lawencon.spring.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity(name = "tb_m_office_dtl")
+public class OfficeDtl extends BaseModel{
+
+	@ManyToOne
+	@JoinColumn(name = "id_office_hdr")
+	private OfficeHdr idOfficeHdr;
+	
+	@OneToMany
+	@JoinColumn(name = "id_layanan")
+	private Layanan idLayanan;
+}

@@ -1,0 +1,7 @@
+package com.lawencon.spring.dto.role;
+
+public class InsertDataRes {
+	private String msg;
+	private InsertDataResData data;
+	
+}

@@ -1,0 +1,45 @@
+package com.lawencon.spring.service;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import javax.transaction.Transactional;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.lawencon.spring.dao.KaryawanDao;
+import com.lawencon.spring.model.Karyawan;
+
+@SpringBootTest
+public class KaryawanServiceTest {
+	
+	@Autowired
+	private KaryawanDao karyawanDao;
+
+	private KaryawanServiceImpl karyawanService;
+	
+	@BeforeEach
+	public void start() {
+		karyawanService = new KaryawanServiceImpl();
+		karyawanService.setKaryawanDao(karyawanDao);
+	}
+	
+	
+	@Test
+	@Transactional
+	public void insert() {
+		Karyawan karyawan = new Karyawan();
+		karyawan.setUsername("Abce");
+		karyawan.setId(10L);
+		karyawanService.insert(karyawan);
+		
+		assertNotNull(karyawan.getId());
+		assertNotNull(karyawan.getUsername());
+	}
+	
+	
+}

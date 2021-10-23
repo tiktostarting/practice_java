@@ -1,0 +1,53 @@
+package com.lawencon.spring.service;
+
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.lawencon.spring.dao.KaryawanDao;
+import com.lawencon.spring.model.Karyawan;
+import com.lawencon.spring.model.Role;
+
+@Service
+public class KaryawanServiceImpl implements KaryawanService{
+	
+	private KaryawanDao karyawanDao;
+	
+	@Autowired
+	public void setKaryawanDao(KaryawanDao karyawanDao) {
+		this.karyawanDao = karyawanDao;
+	}
+
+	@Override
+	public void insert(Karyawan data) {
+		karyawanDao.insert(data);
+		
+	}
+
+	@Override
+	public void update(Karyawan data) {
+		karyawanDao.update(data);
+		
+	}
+
+	@Override
+	public void delete(Long id) {
+		karyawanDao.delete(id);
+		
+	}
+
+	@Override
+	public Karyawan getByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Karyawan getById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.lawencon.spring.service;
+
+import com.lawencon.spring.model.Role;
+
+public interface RoleService {
+	void insert(Role data);
+	Role getById(Long id);
+	Role getByName(String name);
+}

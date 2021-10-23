@@ -1,0 +1,8 @@
+package com.lawencon.spring.model;
+
+public class Item extends BaseModel{
+	private Integer bebanItem;
+	private String namaItem;
+	private String deskripsi;
+	
+}

@@ -1,0 +1,25 @@
+package com.lawencon.spring.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_m_shipping_hdr")
+public class ShippingHdr extends BaseModel{
+	
+	@Column(name = "kd_shipping", length = 15, unique = true)
+	private String kodeShipping;
+	
+	@Column(name = "id_pengirim", length = 15, unique = true)
+	private Pelanggan idPengirim;
+	
+	@Column(name = "id_penerima", length = 15, unique = true)
+	private Pelanggan idPenerima;
+	
+	@Column(name = "id_karyawan", length = 15, unique = true)
+	private Karyawan idKaryawan;
+	
+	@Column(name = "id_office", length = 15, unique = true)
+	private OfficeHdr idOffice;
+}

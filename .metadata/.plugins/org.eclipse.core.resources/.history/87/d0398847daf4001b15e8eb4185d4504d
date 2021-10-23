@@ -1,0 +1,6 @@
+package com.lawencon.spring.dto.role;
+
+public class FindByIdPathResData {
+	private String kodeRole;
+	private String namaRole;
+}

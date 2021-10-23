@@ -1,0 +1,86 @@
+package com.lawencon.spring.model;
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name = "tb_m_status")
+public class Status {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Column(name = "nama_status", length = 20)
+	private String namaStatus;
+	@Column(name = "kd_status", unique = true, length = 10)
+	private String kodeStatus;
+	@Column(name = "version")
+	private Integer version;
+	@Column(name = "isactive")
+	private Boolean isActive;
+	@Column(name = "created_by")
+	private Integer createdBy;
+	@Column(name = "created_at")
+	private LocalDateTime createdAt;
+	@Column(name = "updated_by")
+	private Integer updatedBy;
+	@Column(name = "updated_at")
+	private LocalDateTime updatedAt;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getNamaStatus() {
+		return namaStatus;
+	}
+	public void setNamaStatus(String namaStatus) {
+		this.namaStatus = namaStatus;
+	}
+	public String getKodeStatus() {
+		return kodeStatus;
+	}
+	public void setKodeStatus(String kodeStatus) {
+		this.kodeStatus = kodeStatus;
+	}
+	public Integer getVersion() {
+		return version;
+	}
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+	public Boolean getIsActive() {
+		return isActive;
+	}
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+	public Integer getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(Integer createdBy) {
+		this.createdBy = createdBy;
+	}
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+	public Integer getUpdatedBy() {
+		return updatedBy;
+	}
+	public void setUpdatedBy(Integer updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+	public LocalDateTime getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(LocalDateTime updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+	
+}

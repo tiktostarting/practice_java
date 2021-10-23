@@ -1,0 +1,15 @@
+package com.lawencon.spring.service;
+
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.lawencon.spring.dao.RoleDao;
+import com.lawencon.spring.model.Role;
+
+@Service
+public class KaryawanServiceImpl implements KaryawanService{
+
+}

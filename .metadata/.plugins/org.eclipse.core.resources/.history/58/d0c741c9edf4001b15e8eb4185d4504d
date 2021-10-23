@@ -1,0 +1,7 @@
+package com.lawencon.spring.dto.role;
+
+public class UpdateDataReq {
+	private Long id;
+	private String kodeRole;
+	private String namaRole;
+}

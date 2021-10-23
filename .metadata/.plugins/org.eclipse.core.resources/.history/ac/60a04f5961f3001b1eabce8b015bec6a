@@ -1,0 +1,39 @@
+package com.lawencon.spring.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name = "tb_m_role")
+public class Role {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(name = "kd_role", unique = true, length = 10) 
+	private String kodeRole;
+	
+	@Column(name = "nama_role", length = 20)
+	private String namaRole;
+	
+	@Column(name = "version")
+	private Integer version;
+	
+	@Column(name = "isactive")
+	private Boolean isActive;
+	
+	@Column(name = "created_by")
+	private Integer createdBy;
+	
+	@Column(name = "created_at")
+	private String createdAt;
+	
+	@Column(name = "updated_by")
+	private Integer updatedBy;
+	
+	@Column(name = "updated_at")
+	private String updatedAt;
+}

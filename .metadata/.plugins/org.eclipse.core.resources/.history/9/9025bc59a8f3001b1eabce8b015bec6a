@@ -1,0 +1,11 @@
+package com.lawencon.spring.service;
+
+import com.lawencon.spring.model.Role;
+
+public interface RoleService {
+	void insert(Role data);
+	void update(Role data);
+	void delete(Long id);
+	Role getById(Integer id);
+	Role getByName(String name);
+}

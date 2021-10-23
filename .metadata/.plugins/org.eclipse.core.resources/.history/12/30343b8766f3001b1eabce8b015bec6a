@@ -1,0 +1,21 @@
+package com.lawencon.spring.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name = "tb_m_kategori")
+public class Kategori {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String namaKategori;
+	private String kodeKategori;
+	private Integer version;
+	private Boolean isActive;
+	private Integer createdBy;
+	private String createdAt;
+	private Integer updatedBy;
+	private String updatedAt;
+}

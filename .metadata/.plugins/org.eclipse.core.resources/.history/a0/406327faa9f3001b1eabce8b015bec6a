@@ -1,0 +1,5 @@
+package com.lawencon.spring.dao;
+
+public interface KaryawanDao {
+
+}

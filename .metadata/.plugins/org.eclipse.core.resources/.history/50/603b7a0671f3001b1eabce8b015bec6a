@@ -1,0 +1,9 @@
+package com.lawencon.spring.dao;
+
+import com.lawencon.spring.model.Universitas;
+
+public interface UniversitasDao {
+	void insert (Universitas data);
+	
+	Universitas getById(Long id); 
+}

@@ -1,0 +1,5 @@
+package com.lawencon.spring.dto;
+
+public class KaryawanFindByIdPathRes {
+
+}

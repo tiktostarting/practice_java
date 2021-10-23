@@ -1,0 +1,9 @@
+package com.lawencon.spring.model;
+
+public class ShippingHdr {
+	private String kodeShipping;
+	private Long idPengirim;
+	private Long idPenerima;
+	private Long idKaryawan;
+	private Long idOffice;
+}

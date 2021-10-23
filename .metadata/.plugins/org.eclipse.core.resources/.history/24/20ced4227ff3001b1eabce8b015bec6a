@@ -1,0 +1,37 @@
+package com.lawencon.spring.dao;
+
+import com.lawencon.spring.model.Role;
+
+public class RoleDaoImpl extends BaseDaoImpl implements RoleDao{
+
+	@Override
+	public void insert(Role data) {
+		// TODO Auto-generated method stub
+		em.persist(data);
+	}
+
+	@Override
+	public Role getById(Long id) {
+		// TODO Auto-generated method stub
+		return em.find(Role.class, id);
+	}
+
+	@Override
+	public Role getByName(String name) {
+		// TODO Auto-generated method stub
+		return em.find(Role.class, name);
+	}
+
+	@Override
+	public void update(Role data, Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Role data) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

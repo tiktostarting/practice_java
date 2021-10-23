@@ -1,0 +1,8 @@
+package com.lawencon.spring.dto.role;
+
+public class InsertDataReqData {
+	
+	private String kodeRole;
+	private String namaRole;
+	
+}

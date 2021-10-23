@@ -1,0 +1,8 @@
+package com.lawencon.spring.dto.karyawan;
+
+public class FindByIdPathResData {
+	
+	private Long id;
+	private String nama;
+	
+}

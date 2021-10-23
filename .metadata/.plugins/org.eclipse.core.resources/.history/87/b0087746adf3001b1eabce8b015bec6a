@@ -1,0 +1,36 @@
+package com.lawencon.spring.dao;
+
+import com.lawencon.spring.model.Karyawan;
+
+public class KaryawanDaoImpl extends BaseDaoImpl implements KaryawanDao{
+	@Override
+	public void insert(Karyawan data) {
+		// TODO Auto-generated method stub
+		em.persist(data);
+	}
+
+	@Override
+	public Karyawan getById(Integer id) {
+		// TODO Auto-generated method stub
+		return em.find(Karyawan.class, id);
+	}
+
+	@Override
+	public Karyawan getByName(String name) {
+		// TODO Auto-generated method stub
+		return em.find(Karyawan.class, name);
+	}
+
+	@Override
+	public void update(Karyawan data) {
+		// TODO Auto-generated method stub
+		em.merge(data);
+		
+	}
+
+	@Override
+	public void delete(Long id) {
+		String sql = "DELETE FROM tb_m_karyawan WHERE id = :id";
+		em.createNativeQuery(sql).setParameter("id", id).executeUpdate();
+	}
+}

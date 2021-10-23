@@ -1,0 +1,5 @@
+package com.lawencon.spring.controller;
+
+public class KaryawanController {
+
+}

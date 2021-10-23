@@ -1,0 +1,8 @@
+package com.lawencon.spring.controller;
+
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+
+@WebMvcTest(controllers = RoleController.class)
+public class RoleControllerTest {
+	
+}

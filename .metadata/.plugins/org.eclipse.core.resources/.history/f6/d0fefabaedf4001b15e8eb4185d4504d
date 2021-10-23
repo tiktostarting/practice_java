@@ -1,0 +1,19 @@
+package com.lawencon.spring.dto.role;
+
+public class UpdateDataReq {
+	private String msg;
+	private UpdateDataReqData data;
+	
+	public String getMsg() {
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	public UpdateDataReqData getData() {
+		return data;
+	}
+	public void setData(UpdateDataReqData data) {
+		this.data = data;
+	}
+}

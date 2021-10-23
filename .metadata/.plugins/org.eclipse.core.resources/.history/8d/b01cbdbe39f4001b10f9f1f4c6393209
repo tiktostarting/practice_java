@@ -1,0 +1,13 @@
+package com.lawencon.spring.service;
+
+import com.lawencon.spring.model.Universitas;
+
+public interface UniversitasService {
+	void insert(Universitas data);
+	
+	Universitas getById(Long id);
+	
+	void update (Universitas data);
+	
+	void delete (Universitas data);
+}

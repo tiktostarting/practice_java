@@ -1,0 +1,81 @@
+package com.lawencon.spring;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.lawencon.spring.service.RoleService;
+import com.lawencon.spring.service.KaryawanService;
+import com.lawencon.spring.model.Role;
+import com.lawencon.spring.model.Karyawan;
+
+@SpringBootApplication
+public class Application {
+	
+	private RoleService roleService;
+	private KaryawanService karyawanService;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+	
+	private void insertRole(RoleService roleService) {
+		Role role = new Role();
+		role.setId(1L);
+		role.setVersion(1);			
+		role.setNamaRole("Kasir");
+		role.setKodeRole("CSR");
+		roleService.insert(role);
+	}
+	
+	private void updateRole(RoleService roleService) {
+		Role newRole = new Role();
+		newRole.setId(1L);
+		newRole.setVersion(1);
+		newRole.setNamaRole("Persona");
+		newRole.setKodeRole("PCR");
+		roleService.update(newRole);
+	}
+	
+	private void deleteRole(RoleService roleService) {
+		roleService.delete(Long.valueOf(1L));
+	}
+	
+	private void insertKaryawan(KaryawanService karyawanService) {
+		Karyawan data = new Karyawan();
+		data.setVersion(1);			
+		data.setUsername("adm@ex.com");
+		data.setPass("adm");
+		karyawanService.insert(data);
+	}
+	
+	private void updateKaryawan(KaryawanService karyawanService) {
+		Karyawan newData = new Karyawan();
+		newData.setId(7L);
+		newData.setVersion(1);
+		newData.setUsername("xxx@ex.com");
+		newData.setPass("cecep");
+		karyawanService.update(newData);
+	}
+	
+	private void deleteKaryawan(KaryawanService karyawanService) {
+		karyawanService.delete(1L);
+	}	
+	
+	@Bean
+	public CommandLineRunner commandLineRunner(RoleService roleService, KaryawanService karyawanService) {
+		return args -> {
+//			insertKaryawan(karyawanService);
+			updateKaryawan(karyawanService);
+//			deleteKaryawan(karyawanService);			
+			
+			
+//			insertRole(roleService);
+//			updateRole(roleService);
+//			deleteRole(roleService);
+			
+		};
+	}
+
+}

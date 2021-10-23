@@ -1,0 +1,111 @@
+package com.lawencon.spring.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name = "tb_m_role")
+public class Role {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(name = "kd_role", unique = true, length = 10) 
+	private String kodeRole;
+	
+	@Column(name = "nama_role", length = 20)
+	private String namaRole;
+	
+	@Column(name = "version")
+	private Integer version;
+	
+	@Column(name = "isactive")
+	private Boolean isActive;
+	
+	@Column(name = "created_by")
+	private Integer createdBy;
+	
+	@Column(name = "created_at")
+	private String createdAt;
+	
+	@Column(name = "updated_by")
+	private Integer updatedBy;
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getKodeRole() {
+		return kodeRole;
+	}
+
+	public void setKodeRole(String kodeRole) {
+		this.kodeRole = kodeRole;
+	}
+
+	public String getNamaRole() {
+		return namaRole;
+	}
+
+	public void setNamaRole(String namaRole) {
+		this.namaRole = namaRole;
+	}
+
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+
+	public Boolean getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(Boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public Integer getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(Integer createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public String getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Integer getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(Integer updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public String getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	@Column(name = "updated_at")
+	private String updatedAt;
+}

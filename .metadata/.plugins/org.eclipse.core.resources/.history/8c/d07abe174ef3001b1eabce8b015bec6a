@@ -1,0 +1,6 @@
+package com.lawencon.model;
+
+public class Mahasiswa {
+	private Long id;
+	
+}

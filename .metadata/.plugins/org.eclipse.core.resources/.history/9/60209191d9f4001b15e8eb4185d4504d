@@ -1,0 +1,9 @@
+package com.lawencon.spring.dto.karyawan;
+
+public class InsertDataRes {
+	
+	private String msg;
+	private InsertDataResData data;
+	
+	
+}

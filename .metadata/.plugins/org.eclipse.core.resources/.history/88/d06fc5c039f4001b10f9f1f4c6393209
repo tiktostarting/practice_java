@@ -1,0 +1,36 @@
+package com.lawencon.spring.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
+
+import com.lawencon.spring.model.Universitas;
+
+@Service
+public class UniversitasServiceImpl implements UniversitasService{
+	
+	private Universitas universitasDao;
+
+	@Override
+	public void insert(Universitas data) {
+		this.universitasDao = data;
+	}
+
+	@Override
+	public Universitas getById(Long id) {
+		return null;
+	}
+
+	@Override
+	public void update(Universitas data) {
+		
+	}
+
+	@Override
+	public void delete(Universitas data) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

@@ -1,0 +1,51 @@
+package com.lawencon.spring.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.lawencon.spring.dao.RoleDao;
+import com.lawencon.spring.model.Role;
+
+@Service
+public class RoleServiceImpl implements RoleService{
+	
+	private RoleDao roleDAO;
+	
+	@Autowired
+	public void setRoleDao(RoleDao roleDAO) {
+		this.roleDAO = roleDAO;
+	}
+
+	@Override
+	@Transactional
+	public void insert(Role data) {
+		roleDAO.insert(data);
+	}
+
+	@Override
+	public Role getById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Role getByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	@Transactional
+	public void update(Role data) {
+		roleDAO.update(data);
+	}
+
+	@Override
+	@Transactional
+	public void delete(Integer id) {
+		roleDAO.delete(id);
+	}
+	
+}
